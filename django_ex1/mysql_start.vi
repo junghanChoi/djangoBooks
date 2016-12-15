@@ -1,0 +1,30 @@
+sudo service mysql start
+
+launch at reboot : sudo /usr/sbin/update-rc.d mysql defaults
+
+/usr/bin/mysql -u root -p
+--> enter pw
+
+change pw
+UPDATE mysql.user SET Password = PASSWORD('wantedPassword') WHERE User = 'root';
+
+to check the chagne taken effect,
+FLUSH PRIVILEGES;
+
+View Users
+
+SELECT User, Host, Password FROM mysql.user;
+
+CREATE A DB
+CREATE DATABASE demodb;
+
+Add a db user
+INSERT INTO mysql.user (User,Host,Password)
+VALUES('demouser','localhost',PASSWORD('wantedPW'));
+FLUSH PRIVILEGES;
+
+grant db user permitions
+GRANT ALL PRIVILEGES ON demodb.* to demouser@localhost;
+FLUSH PRIVILEGES;
+
+SHOW GRANTS FOR 'demouser'@'localhost';
