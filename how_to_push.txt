@@ -1,0 +1,13 @@
+1. add files
+    git add [files]
+2. commit with message
+    git commit -m "blablabla"
+3. remote
+    git remote add origin https://github.com/junghanChoi/djangoBooks.git
+4. push
+    git push -u origin master
+
+
+after init and push first time
+git push origin master
+--> works!
