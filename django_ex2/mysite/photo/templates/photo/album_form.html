@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}album_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/forms.css" %}{% endblock %}
+
+{% block content %}
+<div id='content'>
+
+    <h1>Album-photo InlineFormSet</h1>
+
+    {% if form.is_multipart or formset.is_multipart %}
+
